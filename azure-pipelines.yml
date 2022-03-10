@@ -34,3 +34,11 @@ steps:
     pip install pytest pytest-azurepipelines
     pytest
   displayName: 'pytest'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure Pass - Sponsorship(fc6f08ef-136f-43d4-9692-5db6504554a0)'
+    appType: 'webAppLinux'
+    appName: 
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    runtimeStack: 'TOMCAT|8.5-jre8'
